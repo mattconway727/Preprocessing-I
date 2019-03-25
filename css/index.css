@@ -136,18 +136,19 @@ body {
 }
 /* Start of styles */
 /* variables */
+h2 {
+  font-size: 1.8rem;
+}
 .container {
   padding: 0 80px;
 }
-.nav {
+nav {
   display: flex;
   justify-content: flex-end;
-}
-nav-items {
-  display: flex;
-  width: 20rem;
-  justify-content: space-between;
   padding: 20px 0;
+}
+nav p {
+  margin-left: 30px;
 }
 .jumbo {
   background-color: lightgray;
@@ -163,7 +164,7 @@ nav-items {
   width: 15rem;
 }
 .title h1 {
-  font-size: 6rem;
+  font-size: 2.8rem;
 }
 .title h4 {
   padding-top: 1rem;
@@ -181,32 +182,53 @@ nav-items {
   margin-top: 1rem;
   color: white;
 }
-middle-content {
+.middle-content {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
 }
-middle-content .left,
-middle-content .right {
+.middle-content .left,
+.middle-content .right {
   width: 45%;
 }
-middle-content h1 {
+.middle-content h1 {
   font-size: 2rem;
 }
-middle-content p {
+.middle-content p {
   padding-top: 0.5rem;
+}
+.right p {
+  border: 1px solid lightgray;
+  padding: 10px;
 }
 .work-history {
   margin-top: 2rem;
-  padding-top: 0.5rem;
 }
 .work-history h1 {
   font-size: 2rem;
+  padding-top: 0.5rem;
+}
+table {
+  width: 100%;
+}
+table tr {
+  border: 1px solid lightgray;
+}
+table tr td {
+  padding: 15px;
+}
+table tr th {
+  font-weight: bold;
+  padding: 15px;
+}
+tr:nth-child(odd) {
+  background: lightgray;
 }
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
   height: 6rem;
   background-color: gray;
   margin: 2rem -2rem 0 -2rem;
