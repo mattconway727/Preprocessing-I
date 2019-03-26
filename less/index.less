@@ -141,10 +141,27 @@ body {
 
 /* Start of styles */
 /* variables */
-// @fontstack
+
+@background: lightgray;
+@font: 1.8rem;
+
+// mixins
+.flex() {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img() {
+  height: auto;
+  width: 15rem;
+}
+
+// mobile breakpoint
+
+@mobile: ~"(max-width: 500px)";
 
 h2 {
-  font-size: 1.8rem;
+  font-size: @font;
 }
 
 .container {
@@ -157,9 +174,7 @@ h2 {
 // }
 
 nav {
-  display: flex;
-  // width: 20rem;
-  justify-content: flex-end;
+  .flex;
   padding: 20px 0;
 
   p {
@@ -168,7 +183,7 @@ nav {
 }
 
 .jumbo {
-  background-color: lightgray;
+  background-color: @background;
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -178,14 +193,17 @@ nav {
   padding-top: 1rem;
 
   img {
-    height: auto;
-    width: 15rem;
+    .img;
   }
 }
 
 .title {
   h1 {
     font-size: 2.8rem;
+
+    @media @mobile {
+      font-size: 1.5rem;
+    }
   }
 
   h4 {
