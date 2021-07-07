@@ -4,56 +4,293 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+/* Start of styles */
+/* variables */
+
+@background: lightgray;
+@font: 1.8rem;
+
+// mixins
+.flex() {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img() {
+  height: auto;
+  width: 15rem;
+}
+
+// mobile breakpoint
+
+@mobile: ~"(max-width: 500px)";
+
+h2 {
+  font-size: @font;
+}
+
+.container {
+  padding: 0 80px;
+}
+
+// nav {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
+nav {
+  .flex;
+  padding: 20px 0;
+
+  p {
+    margin-left: 30px;
+  }
+}
+
+.jumbo {
+  background-color: @background;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.img-block {
+  padding-top: 1rem;
+
+  img {
+    .img;
+  }
+}
+
+.title {
+  h1 {
+    font-size: 2.8rem;
+
+    @media @mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  h4 {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.team-up {
+  hr {
+    margin: 2rem 0;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: gray;
+    margin-top: 1rem;
+    color: white;
+  }
+}
+
+.middle-content {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  .left,
+  .right {
+    width: 45%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    padding-top: 0.5rem;
+  }
+}
+
+.right {
+  p {
+    border: 1px solid lightgray;
+    padding: 10px;
+  }
+}
+
+.work-history {
+  margin-top: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+  }
+}
+
+table {
+  width: 100%;
+
+  tr {
+    border: 1px solid lightgray;
+
+    td {
+      padding: 15px;
+    }
+
+    th {
+      font-weight: bold;
+      padding: 15px;
+    }
+  }
+}
+
+tr:nth-child(odd) {
+  background: lightgray;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 6rem;
+  background-color: gray;
+  margin: 2rem -2rem 0 -2rem;
+}
